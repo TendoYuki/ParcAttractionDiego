@@ -19,5 +19,24 @@
         <!-- <span>{{attraction.visible}}</span> -->
       </div>
     </ng-container>
+
+    <div class="critique-title">
+      <div class="critique">
+        <span>Prenom</span>
+        <span>Nom</span>
+        <span>Note</span>
+        <span>Critique</span>
+        <!-- <span>Debug visible ou non</span> -->
+      </div>
+    </div>
+    <ng-container *ngFor="let critique of critiques | async;" >
+      <div class="critique">
+        <span >{{critique.name}}</span>
+        <span>{{critique.first_name}}</span>
+        <span>{{critique.mark}} / 5</span>
+        <span>{{critique.text}}</span>
+        <!-- <span>{{attraction.visible}}</span> -->
+      </div>
+    </ng-container>
   </mat-card-content>
 </mat-card>

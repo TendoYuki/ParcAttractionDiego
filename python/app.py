@@ -4,6 +4,7 @@ from flask_cors import CORS
 import request.request as req
 import controller.auth.auth as user
 import controller.attraction as attraction
+import controller.critique as critique
 
 app = Flask(__name__)
 CORS(app)
@@ -66,4 +67,10 @@ def login():
     conn.close()
 
     result = jsonify({"token": user.encode_auth_token(list(records[0])[0]), "name": json['name']})
+    return result, 200
+  
+
+@app.get('/critique')
+def getAllCritique():
+    result = critique.get_all_critique()
     return result, 200
