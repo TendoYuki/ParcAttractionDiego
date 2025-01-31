@@ -34,7 +34,7 @@ def get_attraction(id):
         return False
 
     json = req.select_from_db("SELECT * FROM attraction WHERE attraction_id = ?", (id,))
-
+    
     if len(json) > 0:
         return json[0]
     else:

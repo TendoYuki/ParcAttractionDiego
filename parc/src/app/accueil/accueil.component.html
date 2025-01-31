@@ -8,13 +8,15 @@
         <span>Nom de l'attraction</span>
         <span>Description de l'attraction</span>
         <span>Difficulté de l'attraction / 5</span>
+        <!-- <span>Debug visible ou non</span> -->
       </div>
     </div>
-    <ng-container *ngFor="let attraction of attractions | async;">
-      <div class="attraction">
-        <span>{{attraction.nom}}</span>
+    <ng-container *ngFor="let attraction of attractions | async;" >
+      <div class="attraction" *ngIf="attraction.visible">
+        <span >{{attraction.nom}}</span>
         <span>{{attraction.description}}</span>
         <span>{{attraction.difficulte}} / 5</span>
+        <!-- <span>{{attraction.visible}}</span> -->
       </div>
     </ng-container>
   </mat-card-content>
