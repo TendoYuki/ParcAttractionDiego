@@ -74,3 +74,20 @@ def login():
 def getAllCritique():
     result = critique.get_all_critique()
     return result, 200
+  
+  
+@app.get('/critique/<int:attraction_id>')
+def getCritiquesForAttraction(attraction_id):
+    result = critique.get_critiques_by_attraction(attraction_id)
+    if result:
+        return jsonify(result), 200
+    return jsonify({"message": "Aucune critique trouvée."}), 404
+  
+  
+@app.get('/critique/moyenne/<int:attraction_id>')
+def getAverageRating(attraction_id):
+    result = critique.get_average_rating(attraction_id)
+    if result is not None:
+        return jsonify({"average": result}), 200
+    return jsonify({"message": "Aucune critique trouvée."}), 404
+

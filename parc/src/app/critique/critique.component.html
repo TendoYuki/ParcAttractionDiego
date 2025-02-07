@@ -1,6 +1,6 @@
 <mat-card>
   <mat-card-header>
-    <mat-card-title>Page administrateur pour <button mat-button (click)="addAttraction()">Ajouter</button>, modifier et supprimer des attractions</mat-card-title>
+    <mat-card-title>Bienvenue sur le site internet du parc d'attraction</mat-card-title>
   </mat-card-header>
   <mat-card-content>
     <div class="attraction-title">
@@ -8,36 +8,32 @@
         <span>Nom de l'attraction</span>
         <span>Description de l'attraction</span>
         <span>Difficulté de l'attraction / 5</span>
-        <span>Visible</span>
+        <span>Note moyenne de l'attraction /5</span>
       </div>
     </div>
-    <ng-container *ngIf="attractions | async">
-      <ng-container *ngFor="let formulaireAttraction of formulaireAttractions; let indexForm = index;"
-        [formGroup]="formulaireAttraction"
-        style="display: flex; flex-direction: column;"
-      >
-        <div class="attraction">
-          <mat-form-field class="champ" appearance="fill">
-            <mat-label>Nom</mat-label>
-            <input matInput formControlName="nom">
-          </mat-form-field>
-      
-          <mat-form-field class="champ" appearance="fill">
-            <mat-label>Description</mat-label>
-            <input matInput formControlName="description">
-          </mat-form-field>
-  
-          <mat-form-field class="champ" appearance="fill">
-            <mat-label>Difficulté / 5</mat-label>
-            <input matInput formControlName="difficulte" type="number">
-          </mat-form-field>
-
-          <mat-slide-toggle class="champ" formControlName="visible">Element visible</mat-slide-toggle>
-
-          <button mat-button (click)="onSubmit(formulaireAttraction)" class="champ">Enregistrer</button>
-        </div>
-      </ng-container>
+    <ng-container >
+      <div class="attraction" *ngIf="attraction | async as entry">
+        <span >{{entry.nom}}</span>
+        <span>{{entry.description}}</span>
+        <span>{{entry.difficulte}} / 5</span>
+        <span>{{ averageRating | number:'1.1-1' }} / 5</span>
+      </div>
+    </ng-container>
+    <div class="critique-title">
+      <div class="critique">
+        <span>Prenom</span>
+        <span>Nom</span>
+        <span>Note</span>
+        <span>Critique</span>
+      </div>
+    </div>
+    <ng-container *ngFor="let critique of critiques | async;" >
+      <div class="critique">
+        <span >{{critique.name}}</span>
+        <span>{{critique.first_name}}</span>
+        <span>{{critique.mark}} / 5</span>
+        <span>{{critique.text}}</span>
+      </div>
     </ng-container>
   </mat-card-content>
 </mat-card>
-

@@ -1,11 +1,15 @@
+SET FOREIGN_KEY_CHECKS = 0;
+DROP TABLE IF EXISTS critique;
 DROP TABLE IF EXISTS attraction;
+DROP TABLE IF EXISTS users;
+SET FOREIGN_KEY_CHECKS = 1;
 
 CREATE TABLE attraction (
     attraction_id int auto_increment,
     primary key(attraction_id),
     nom varchar(255) not null,
     description varchar(255) not null,
-    difficulte int,
+    difficulte int not null check(difficulte between 0 and 5),
     visible bool default true
 );
 
@@ -25,6 +29,6 @@ CREATE TABLE critique (
     name varchar(255) not null,
     first_name varchar(255) not null,
     text varchar(255) not null,
-    mark int not null,
+    mark int not null check(mark between 0 and 5),
     isAnonym bool default false
 );
