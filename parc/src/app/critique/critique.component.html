@@ -1,46 +1,48 @@
-<mat-card>
-  <mat-card-header>
+<mat-card class="page-container">
+  <mat-card-header class="header-title">
     <mat-card-title>Bienvenue sur le site internet du parc d'attraction</mat-card-title>
   </mat-card-header>
+
   <mat-card-content>
-    <div class="attraction-title">
-      <div class="attraction">
-        <span>Nom de l'attraction</span>
-        <span>Description de l'attraction</span>
-        <span>Difficulté de l'attraction / 5</span>
-        <span>Note moyenne de l'attraction /5</span>
-      </div>
-      <button mat-raised-button color="primary" (click)="openAddCritiqueDialog()">Ajouter une critique</button>
-    </div>
-    <ng-container >
-      <div class="attraction" *ngIf="attraction | async as entry">
-        <span >{{entry.nom}}</span>
-        <span>{{entry.description}}</span>
-        <span>{{entry.difficulte}} / 5</span>
-        <span>{{ averageRating | number:'1.1-1' }} / 5</span>
+    <ng-container>
+      <div class="attraction-info" *ngIf="attraction | async as entry">
+        <h2 class="section-title">Informations sur l'attraction</h2>
+
+        <img class="attraction-image" [src]="'../../assets/misc/images/attraction' + entry.attraction_id + '.jpg'" alt="Image de {{ entry.nom }}" />
+
+        <div class="attraction-details">
+          <span><strong>Nom :</strong> {{ entry.nom }}</span>
+          <span><strong>Description :</strong> {{ entry.description }}</span>
+          <span><strong>Difficulté :</strong> {{ entry.difficulte }} / 5</span>
+          <span><strong>Note moyenne :</strong> {{ averageRating | number:'1.1-1' }} / 5</span>
+        </div>
+        <button mat-raised-button color="accent" (click)="openAddCritiqueDialog()">Ajouter une critique</button>
       </div>
     </ng-container>
-    <div class="critique-title">
-      <div class="critique">
-        <span>Prenom</span>
-        <span>Nom</span>
-        <span>Note</span>
-        <span>Critique</span>
+
+    <h2 class="section-title">Critiques</h2>
+    <div class="critique-list">
+      <div class="critique-header">
+        <span><strong>Prénom</strong></span>
+        <span><strong>Nom</strong></span>
+        <span><strong>Note</strong></span>
+        <span><strong>Critique</strong></span>
       </div>
+
+      <ng-container *ngFor="let critique of critiques | async;">
+        <div class="critique-item">
+          <ng-container *ngIf="!critique.isAnonym; else anonymousCritique">
+            <span>{{ critique.first_name }}</span>
+            <span>{{ critique.name }}</span>
+          </ng-container>
+          <ng-template #anonymousCritique>
+            <span>Anonymous</span>
+            <span></span>
+          </ng-template>
+          <span>{{ critique.mark }} / 5</span>
+          <span>{{ critique.text }}</span>
+        </div>
+      </ng-container>
     </div>
-    <ng-container *ngFor="let critique of critiques | async;" >
-      <div class="critique">
-        @if(!critique.isAnonym) {
-          <span>{{critique.name}}</span>
-          <span>{{critique.first_name}}</span>
-        }
-        @else {
-          <span>I'm </span>
-          <span>anonymous !!</span>
-        }
-        <span>{{critique.mark}} / 5</span>
-        <span>{{critique.text}}</span>
-      </div>
-    </ng-container>
   </mat-card-content>
 </mat-card>

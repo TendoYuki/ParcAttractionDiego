@@ -1,11 +1,9 @@
-// Style global pour le formulaire
 mat-dialog-content {
   form {
     display: flex;
     flex-direction: column;
     gap: 16px;
 
-    // Chaque champ de formulaire
     .form-group {
       display: flex;
       flex-direction: column;
@@ -42,7 +40,6 @@ mat-dialog-content {
       margin-right: 8px;
     }
 
-    // Aligner la case à cocher et le texte
     .checkbox-group {
       display: flex;
       align-items: center;
@@ -59,7 +56,6 @@ mat-dialog-content {
   }
 }
 
-// Style pour les actions du pop-up
 mat-dialog-actions {
   display: flex;
   justify-content: flex-end;
@@ -76,6 +72,7 @@ mat-dialog-actions {
 
     &:hover {
       background-color: rgba(63, 81, 181, 0.1);
+      cursor: pointer;
     }
 
     &[mat-button] {
@@ -93,7 +90,6 @@ mat-dialog-actions {
   }
 }
 
-// Responsive design pour les écrans plus petits
 @media (max-width: 600px) {
   mat-dialog-content {
     form {
