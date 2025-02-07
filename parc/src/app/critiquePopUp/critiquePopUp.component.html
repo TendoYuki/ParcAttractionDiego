@@ -1,0 +1,26 @@
+<h2 mat-dialog-title>Ajouter une critique</h2>
+
+<mat-dialog-content>
+  <form>
+    <label for="name">Nom :</label>
+    <input id="name" [(ngModel)]="data.name" name="name" required>
+
+    <label for="first_name">Prénom :</label>
+    <input id="first_name" [(ngModel)]="data.first_name" name="first_name" required>
+
+    <label for="text">Critique :</label>
+    <textarea id="text" [(ngModel)]="data.text" name="text" required></textarea>
+
+    <label for="mark">Note :</label>
+    <input id="mark" type="number" min="1" max="5" [(ngModel)]="data.mark" name="mark" required>
+
+    <label>
+      <input type="checkbox" [(ngModel)]="data.isAnonym" name="isAnonym"> Anonyme
+    </label>
+  </form>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+  <button mat-button (click)="cancel()">Annuler</button>
+  <button mat-button [mat-dialog-close]="data">Ajouter</button>
+</mat-dialog-actions>

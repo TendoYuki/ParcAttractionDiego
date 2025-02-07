@@ -35,3 +35,25 @@ def get_average_rating(attraction_id):
 
   return average if average is not None else 0
 
+
+def add_critique(data):
+    try:
+        cur, conn = req.get_db_connection()
+        query = """
+            INSERT INTO critique (attraction_id, name, first_name, text, mark, isAnonym)
+            VALUES (%s, %s, %s, %s, %s, %s)
+        """
+        cur.execute(query, (
+            data['attraction_id'],
+            data['name'],
+            data['first_name'],
+            data['text'],
+            data['mark'],
+            data['isAnonym']
+        ))
+        conn.commit()
+        conn.close()
+        return True
+    except Exception as e:
+        print(f"Erreur : {e}", flush=True)
+        return False

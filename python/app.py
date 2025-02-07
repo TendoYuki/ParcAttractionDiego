@@ -69,6 +69,9 @@ def login():
     result = jsonify({"token": user.encode_auth_token(list(records[0])[0]), "name": json['name']})
     return result, 200
   
+  
+  
+# Partie ajouté par Diego
 
 @app.get('/critique')
 def getAllCritique():
@@ -90,4 +93,21 @@ def getAverageRating(attraction_id):
     if result is not None:
         return jsonify({"average": result}), 200
     return jsonify({"message": "Aucune critique trouvée."}), 404
+  
+  
+
+@app.post('/critique')
+def addCritique():
+  json_data = request.get_json()
+
+  # Vérifie les champs nécessaires
+  if not all(k in json_data for k in ("attraction_id", "name", "first_name", "text", "mark")):
+      return jsonify({"message": "Données manquantes"}), 400
+
+  # Ajoute la critique
+  result = critique.add_critique(json_data)
+  if result:
+      return jsonify({"message": "Critique ajoutée avec succès"}), 201
+  return jsonify({"message": "Erreur lors de l'ajout de la critique"}), 500
+
 

@@ -10,6 +10,7 @@
         <span>Difficulté de l'attraction / 5</span>
         <span>Note moyenne de l'attraction /5</span>
       </div>
+      <button mat-raised-button color="primary" (click)="openAddCritiqueDialog()">Ajouter une critique</button>
     </div>
     <ng-container >
       <div class="attraction" *ngIf="attraction | async as entry">
@@ -29,8 +30,13 @@
     </div>
     <ng-container *ngFor="let critique of critiques | async;" >
       <div class="critique">
-        <span >{{critique.name}}</span>
-        <span>{{critique.first_name}}</span>
+        @if(!critique.isAnonym) {
+          <span>{{critique.name}}</span>
+          <span>{{critique.first_name}}</span>
+        }
+        @else {
+          <span>I'm anonymous !!</span>
+        }
         <span>{{critique.mark}} / 5</span>
         <span>{{critique.text}}</span>
       </div>
