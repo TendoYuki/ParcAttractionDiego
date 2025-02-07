@@ -2,21 +2,31 @@
 
 <mat-dialog-content>
   <form>
-    <label for="name">Nom :</label>
-    <input id="name" [(ngModel)]="data.name" name="name" required>
+    <div class="checkbox-group">
+      <input type="checkbox" [(ngModel)]="data.isAnonym" name="isAnonym">
+      <label> Anonyme</label>
+    </div>
+    <div *ngIf="!data.isAnonym">
+      <div class="form-group">
+        <label for="name">Nom :</label>
+        <input id="name" [(ngModel)]="data.name" name="name">
+      </div>
 
-    <label for="first_name">Prénom :</label>
-    <input id="first_name" [(ngModel)]="data.first_name" name="first_name" required>
+      <div class="form-group">
+        <label for="first_name">Prénom :</label>
+        <input id="first_name" [(ngModel)]="data.first_name" name="first_name">
+      </div>
+    </div>
 
-    <label for="text">Critique :</label>
-    <textarea id="text" [(ngModel)]="data.text" name="text" required></textarea>
+    <div class="form-group">
+      <label for="text">Critique :</label>
+      <textarea id="text" [(ngModel)]="data.text" name="text" required></textarea>
+    </div>
 
-    <label for="mark">Note :</label>
-    <input id="mark" type="number" min="1" max="5" [(ngModel)]="data.mark" name="mark" required>
-
-    <label>
-      <input type="checkbox" [(ngModel)]="data.isAnonym" name="isAnonym"> Anonyme
-    </label>
+    <div class="form-group">
+      <label for="mark">Note :</label>
+      <input id="mark" type="number" min="1" max="5" [(ngModel)]="data.mark" name="mark" required>
+    </div>
   </form>
 </mat-dialog-content>
 
