@@ -1,32 +1,32 @@
 <mat-card class="page-container">
   <mat-card-header class="header-title">
-    <mat-card-title>Bienvenue sur le site internet du parc d'attraction</mat-card-title>
+    <mat-card-title i18n>Critiques sur une attraction du parc ElTacoMex</mat-card-title>
   </mat-card-header>
 
   <mat-card-content>
     <ng-container>
       <div class="attraction-info" *ngIf="attraction | async as entry">
-        <h2 class="section-title">Informations sur l'attraction</h2>
+        <h2 class="section-title" i18n>Informations sur l'attraction</h2>
 
-        <img class="attraction-image" [src]="'../../assets/misc/images/attraction' + entry.attraction_id + '.jpg'" alt="Image de {{ entry.nom }}" />
+        <img class="attraction-image" [src]="'../../assets/misc/images/attraction' + entry.attraction_id + '.jpg'" i18n-alt alt="Image de {{ entry.nom }}" />
 
         <div class="attraction-details">
-          <span><strong>Nom :</strong> {{ entry.nom }}</span>
-          <span><strong>Description :</strong> {{ entry.description }}</span>
-          <span><strong>Difficulté :</strong> {{ entry.difficulte }} / 5</span>
-          <span><strong>Note moyenne :</strong> {{ averageRating | number:'1.1-1' }} / 5</span>
+          <span i18n><strong>Nom :</strong> {{ entry.nom }}</span>
+          <span i18n><strong>Description :</strong> {{ entry.description }}</span>
+          <span i18n><strong>Difficulté :</strong> {{ entry.difficulte }} / 5</span>
+          <span i18n><strong>Note moyenne :</strong> {{ averageRating | number:'1.1-1' }} / 5</span>
         </div>
-        <button mat-raised-button color="accent" (click)="openAddCritiqueDialog()">Ajouter une critique</button>
+        <button mat-raised-button color="accent" (click)="openAddCritiqueDialog()" i18n>Ajouter une critique</button>
       </div>
     </ng-container>
 
-    <h2 class="section-title">Critiques</h2>
+    <h2 class="section-title" i18n>Critiques</h2>
     <div class="critique-list">
       <div class="critique-header">
-        <span><strong>Prénom</strong></span>
-        <span><strong>Nom</strong></span>
-        <span><strong>Note</strong></span>
-        <span><strong>Critique</strong></span>
+        <span i18n><strong>Prénom</strong></span>
+        <span i18n><strong>Nom</strong></span>
+        <span i18n><strong>Note</strong></span>
+        <span i18n><strong>Critique</strong></span>
       </div>
 
       <ng-container *ngFor="let critique of critiques | async;">
@@ -36,10 +36,10 @@
             <span>{{ critique.name }}</span>
           </ng-container>
           <ng-template #anonymousCritique>
-            <span>Anonymous</span>
+            <span i18n>Anonymous</span>
             <span></span>
           </ng-template>
-          <span>{{ critique.mark }} / 5</span>
+          <span i18n>{{ critique.mark }} / 5</span>
           <span>{{ critique.text }}</span>
         </div>
       </ng-container>

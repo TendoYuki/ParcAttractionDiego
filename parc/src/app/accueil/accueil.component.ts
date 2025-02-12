@@ -26,6 +26,5 @@ export class AccueilComponent {
     this.router.navigate(['critique', attractionId]);
   }
   
-  
   public attractions: Observable<AttractionInterface[]> = this.attractionService.getAllAttraction()
 }

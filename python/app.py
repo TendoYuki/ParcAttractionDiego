@@ -100,11 +100,9 @@ def getAverageRating(attraction_id):
 def addCritique():
   json_data = request.get_json()
 
-  # Vérifie les champs nécessaires
   if not all(k in json_data for k in ("attraction_id", "name", "first_name", "text", "mark")):
       return jsonify({"message": "Données manquantes"}), 400
 
-  # Ajoute la critique
   result = critique.add_critique(json_data)
   if result:
       return jsonify({"message": "Critique ajoutée avec succès"}), 201

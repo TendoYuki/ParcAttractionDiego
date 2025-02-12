@@ -1,31 +1,31 @@
 <div class="homepage-container">
   <header class="hero-section">
     <div class="overlay">
-      <h1>Bienvenue au Parc d'Attractions</h1>
-      <p>Découvrez nos attractions et plongez dans l'aventure !</p>
+      <h1 i18n>Bienvenue au Parc d'Attractions ElTacoMex</h1>
+      <p i18n>Découvrez nos attractions et plongez dans l'aventure !</p>
     </div>
   </header>
 
   <section class="attractions-section">
-    <h2 class="section-title">Nos Attractions</h2>
+    <h2 class="section-title" i18n>Nos Attractions</h2>
     <div class="attractions-grid">
       <ng-container *ngFor="let attraction of attractions | async;">
         <mat-card class="attraction-card" *ngIf="attraction.visible">
-          @if(attraction.attraction_id <= 8){
-            <img mat-card-image [src]="'../../assets/misc/images/attraction' + attraction.attraction_id + '.jpg'" alt="{{ attraction.nom }}" />
-          }
-          @else {
-            <img mat-card-image [src]="'../../assets/misc/images/default_image.jpeg'" alt="{{ 'default image' }}" />
-          }
+          <ng-container *ngIf="attraction.attraction_id <= 8; else defaultImage">
+            <img mat-card-image [src]="'../../assets/misc/images/attraction' + attraction.attraction_id + '.jpg'" i18n-alt alt="{{ attraction.nom }}" />
+          </ng-container>
+          <ng-template #defaultImage>
+            <img mat-card-image [src]="'../../assets/misc/images/default_image.jpeg'" i18n-alt alt="{{ 'default image' }}" />
+          </ng-template>
           <mat-card-header>
             <mat-card-title>{{ attraction.nom }}</mat-card-title>
-            <mat-card-subtitle>Difficulté : {{ attraction.difficulte }} / 5</mat-card-subtitle>
+            <mat-card-subtitle i18n>Difficulté : {{ attraction.difficulte }} / 5</mat-card-subtitle>
           </mat-card-header>
           <mat-card-content>
             <p>{{ attraction.description }}</p>
           </mat-card-content>
           <mat-card-actions>
-            <button mat-raised-button color="primary" (click)="voirCritiques(attraction.attraction_id)">
+            <button mat-raised-button color="primary" (click)="voirCritiques(attraction.attraction_id)" i18n>
               Voir les critiques
             </button>
           </mat-card-actions>
