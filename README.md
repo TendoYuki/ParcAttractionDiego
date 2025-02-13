@@ -1,35 +1,109 @@
-Projet maintenance applicative
+# ParcAttraction - Documentation Technique et Fonctionnelle
 
-Vous avez un projet de parc d'attraction, pour l'instant, on peut uniquement ajouter des attractions (connexion administrateur) et les visualiser (visiteur).
-Il vous faut reprendre le projet et le continuer.
-Certains éléments du projet sont à reprendre, mais ne sont pas explicites dans le cahier des charges, c'est à vous d'identifier les problèmes et de les corriger.
+## 📌 Présentation de l'Application
+L'application **ParcAttraction** est une solution de gestion des attractions et des critiques pour un parc d'attractions réalisée lors des cours de **Maintenance applicative** lors de la 3ème année de **BUT informatique** à **l'IUT de Saint-Dié-des-Vosges**. Elle est construite avec **Angular** pour le front-end et **Flask** avec **MariaDB** pour le back-end.
 
-Si vous avez des questions n'hésitez pas
+---
 
-Notation :
-- Mise en place des fonctionnalités décrites dans le cahier des charges
-- Respect des consignes
-- Qualité de code
-- Commit réguliers et clairs
+## 🛠️ Technologies Utilisées
+### **Front-end (Angular)**
+- **Framework** : Angular
+- **Langages** : TypeScript, HTML, SCSS
+- **Bibliothèques** : Angular Material
+- **Gestion des routes** : Angular Router
 
-Quelques pistes sur quoi commencer :
-- Faire le bilan de l'existant
-- Explorer le projet
-- Établir un début de schéma BDD
+### **Back-end (Flask & MariaDB)**
+- **Framework** : Flask
+- **Base de données** : MariaDB
+- **Endpoints REST** : Flask-RESTful
+- **Gestion des requêtes SQL** : PDO en Python
 
-Si vous avez des soucis lors de l'installation du projet, vous m'appelez
-Mise en place du projet :
+### **Autres Technologies**
+- **Docker** : Conteneurisation
+- **Postman** : Tester l'api
+- **Git** : Versioning
+
+---
+
+## 🚀 Installation et Exécution
+
+### **1️⃣ Mise en place du projet **
 - Faite un clone du projet
-- Faite un nouveau repository et me l'envoyer à l'adresse faivrem22@gmail.com avec <NOM> et <PRENOM>
-Lancement du projet :
-- Build le docker compose (dans le dossier du projet dans un terminal : docker compose build)
-- Lancer le docker compose (dans le dossier du projet dans un terminal : docker compose up)
-Une fois que tout est fini :
-- Aller dans le container python (en console : docker compose exec api sh)
-  - Lancer le script python : init.py (python3 init.py)
-- Le projet est lancé
-Pour tester : 
-Adresse angular :
-http://localhost:4200/accueil
-Adresse api :
-http://127.0.0.1:5000/
+
+### **2️⃣ Lancement du projet**
+- Build le docker compose (dans le dossier du projet dans un terminal)
+```bash
+docker compose build
+```
+- Lancer le docker compose (dans le dossier du projet dans un terminal)
+```bash
+docker compose up
+```
+
+Si un problème survient, copier les lignes de copy.sh, effacer copy.sh et recréer un copy.sh où vous collerez les lignes copiées.
+
+
+### **3️⃣ Lancement du script de la bd**
+- Aller dans le container python (en console)
+```bash
+docker compose exec api sh
+```
+- Lancer le script python
+```python
+python3 init.py
+```
+
+Accéder à l'application : [http://localhost:4200](http://localhost:4200)
+
+L'API est accessible sur : [http://localhost:5000](http://localhost:5000)
+
+
+### **4️⃣ Accéder au site traduis en anglais**
+- Lancer la traduction (dans le dossier du projet dans un terminal)
+```bash
+ng serve --configuration=en
+```
+Accéder à l'application traduite : [lien indiqué dans votre terminal]()
+
+---
+
+## 🔗 API Endpoints
+
+### **Attractions**
+- `POST /attraction` : Ajouter une attraction
+- `GET /attraction` : Récupérer toutes les attractions
+- `GET /attraction/{id}` : Récupérer une attraction
+- `DELETE /attraction/{id}` : Supprimer une attraction
+
+### **Critiques**
+- `GET /critique` : Récupérer toutes les critiques
+- `GET /critique/{id_attraction}` : Récupérer les critiques d'une attraction
+- `GET /critique/moyenne/{id_attraction}` : Récupérer la note moyenne d'une attraction
+- `POST /critique` : Ajouter une critique
+
+### **Authentification**
+- `POST /login` : Connexion
+
+---
+
+## 📌 Fonctionnalités
+### **Utilisateurs**
+✅ Consulter les attractions disponibles  
+✅ Ajouter une critique sur une attraction  
+✅ Naviguer entre les pages du site
+
+### **Administrateurs**
+✅ Ajouter / Supprimer des attractions  
+
+---
+
+## 📌 Améliorations Futures
+- Implémenter un système de filtres pour les critiques
+- Ajouter la gestion des utilisateurs
+- Créer une interface d'administration plus avancée
+
+---
+
+**Auteur** : [Riviere--Jombart]  
+**Contact** : [diego.riviere--jombart@hotmail.com]
+
