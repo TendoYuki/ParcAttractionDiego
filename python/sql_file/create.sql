@@ -14,4 +14,4 @@ INSERT INTO critique (attraction_id,name,first_name,text,mark,isAnonym) VALUES (
 INSERT INTO critique (attraction_id,name,first_name,text,mark,isAnonym) VALUES (2,"Lucas","PLATEAU","NIRVANAAAAAAA",2,0);
 INSERT INTO critique (attraction_id,name,first_name,text,mark,isAnonym) VALUES (2,"Lucas","PLATEAU","Bof enfaite",1,0);
 
-INSERT INTO users (name, password) VALUES ('toto', 'toto');
+INSERT INTO users (name, password) VALUES ('toto', '$2b$12$XqjfgNomzW1g8J.zlvFjYOzI1BxH6TztV89guWMeqd/8WcZBsBUg6');

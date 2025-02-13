@@ -6,6 +6,8 @@ import controller.auth.auth as user
 import controller.attraction as attraction
 import controller.critique as critique
 
+import bcrypt
+
 app = Flask(__name__)
 CORS(app)
 
@@ -61,10 +63,15 @@ def login():
         return result, 400
     
     cur, conn = req.get_db_connection()
-    requete = f"SELECT * FROM users WHERE name = '{json['name']}' AND password = '{json['password']}';"
+    
+    requete = f"SELECT users_id, password FROM users WHERE name = '{json['name']}';"
     cur.execute(requete)
     records = cur.fetchall()
     conn.close()
+
+    if len(records) == 0 or not bcrypt.checkpw(json['password'].encode('utf-8'), records[0][1].encode('utf-8')):
+        result = jsonify({'messages': ["Nom ou/et mot de passe incorrect"]})
+        return result, 400
 
     result = jsonify({"token": user.encode_auth_token(list(records[0])[0]), "name": json['name']})
     return result, 200
