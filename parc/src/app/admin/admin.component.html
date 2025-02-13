@@ -35,7 +35,7 @@
           </mat-form-field>
 
           <mat-slide-toggle class="champ" formControlName="visible" i18n>Element visible</mat-slide-toggle>
-
+          <button mat-button color="warn" (click)="deleteAttraction(indexForm, formulaireAttraction.get('attraction_id')?.value)" class="champ" i18n>Supprimer</button>
           <button mat-button (click)="onSubmit(formulaireAttraction)" class="champ" i18n>Enregistrer</button>
         </div>
       </ng-container>

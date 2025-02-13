@@ -60,4 +60,17 @@ export class AdminComponent {
       })
     );
   }
+
+  public deleteAttraction(index: number, attractionId: number | null) {
+    if (attractionId !== null) {
+      this.attractionService.deleteAttraction(attractionId).subscribe(response => {
+        this._snackBar.open(response.message, undefined, {
+          duration: 1000
+        });
+      });
+    }
+    this.formulaireAttractions.splice(index, 1);
+  }
+  
+  
 }

@@ -30,4 +30,10 @@ export class AttractionService {
     const data = this.dataService.postData(url, attraction);
     return data as Observable<MessageInterface>;
   }
+
+  public deleteAttraction(id: number): Observable<MessageInterface> {
+    const url = `http://127.0.0.1:5000/attraction/${id}`;
+    return this.dataService.deleteData(url) as Observable<MessageInterface>;
+  }
+  
 }

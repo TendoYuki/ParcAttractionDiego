@@ -104,6 +104,17 @@ Accéder à l'application traduite : [lien indiqué dans votre terminal]()
 
 ---
 
+## 📌 Ce qui a été fait
+- Gérer l’état des attractions (visible / pas visible) sur l’écran des visiteurs
+- Mise en place des critiques pour les attractions
+- Amélioration de l’interface
+- Différente langue
+- Documentation
+
+**Bonus**
+- Crypter le mdp dans la base de donnée (ajout de bcrypt)
+- Suppression des attractions
+
 **Auteur** : [Riviere--Jombart]  
 **Contact** : [diego.riviere--jombart@hotmail.com]
 
