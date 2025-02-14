@@ -58,10 +58,16 @@ Accéder à l'application : [http://localhost:4200](http://localhost:4200)
 L'API est accessible sur : [http://localhost:5000](http://localhost:5000)
 
 
-### **4️⃣ Accéder au site traduis en anglais**
+### **4️⃣ Accéder au site traduit**
 - Lancer la traduction (dans le dossier du projet dans un terminal)
+
+**Anglais**
 ```bash
 ng serve --configuration=en
+```
+**Espagnol**
+```bash
+ng serve --configuration=es
 ```
 Accéder à l'application traduite : [lien indiqué dans votre terminal]()
 
