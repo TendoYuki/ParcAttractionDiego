@@ -1,43 +1,61 @@
-<mat-card>
+<mat-card class="admin-card">
   <mat-card-header>
-    <mat-card-title i18n>
-      Page administrateur pour <button mat-button (click)="addAttraction()">Ajouter</button>, modifier et supprimer des attractions
-    </mat-card-title>
+    <mat-card-title i18n>Gestion des attractions</mat-card-title>
+    <mat-card-subtitle i18n>Ajouter, modifier et supprimer des attractions</mat-card-subtitle>
   </mat-card-header>
+
   <mat-card-content>
+    <button mat-raised-button color="primary" (click)="addAttraction()" class="add-button" i18n>
+      <mat-icon>add</mat-icon> Ajouter une attraction
+    </button>
+
+    <mat-divider class="divider"></mat-divider>
+
     <div class="attraction-title">
-      <div class="attraction">
+      <div class="attraction-header">
         <span i18n>Nom de l'attraction</span>
         <span i18n>Description de l'attraction</span>
         <span i18n>Difficulté de l'attraction / 5</span>
         <span i18n>Visible</span>
+        <span i18n>Actions</span>
       </div>
     </div>
-    <ng-container *ngIf="attractions | async">
-      <ng-container *ngFor="let formulaireAttraction of formulaireAttractions; let indexForm = index;"
-        [formGroup]="formulaireAttraction"
-        style="display: flex; flex-direction: column;"
-      >
-        <div class="attraction">
-          <mat-form-field class="champ" appearance="fill">
-            <mat-label i18n>Nom</mat-label>
-            <input matInput formControlName="nom">
-          </mat-form-field>
-      
-          <mat-form-field class="champ" appearance="fill">
-            <mat-label i18n>Description</mat-label>
-            <input matInput formControlName="description">
-          </mat-form-field>
-  
-          <mat-form-field class="champ" appearance="fill">
-            <mat-label i18n>Difficulté / 5</mat-label>
-            <input matInput formControlName="difficulte" type="number">
-          </mat-form-field>
 
-          <mat-slide-toggle class="champ" formControlName="visible" i18n>Element visible</mat-slide-toggle>
-          <button mat-button color="warn" (click)="deleteAttraction(indexForm, formulaireAttraction.get('attraction_id')?.value)" class="champ" i18n>Supprimer</button>
-          <button mat-button (click)="onSubmit(formulaireAttraction)" class="champ" i18n>Enregistrer</button>
-        </div>
+    <ng-container *ngIf="attractions | async">
+      <ng-container *ngFor="let formulaireAttraction of formulaireAttractions; let indexForm = index;" 
+        [formGroup]="formulaireAttraction"
+      >
+        <mat-card class="attraction-card">
+          <mat-card-content class="attraction-content">
+            <div class="attraction-info">
+              <mat-form-field appearance="outline" class="form-field">
+                <mat-label i18n>Nom</mat-label>
+                <input matInput formControlName="nom">
+              </mat-form-field>
+
+              <mat-form-field appearance="outline" class="form-field">
+                <mat-label i18n>Description</mat-label>
+                <input matInput formControlName="description">
+              </mat-form-field>
+
+              <mat-form-field appearance="outline" class="form-field">
+                <mat-label i18n>Difficulté / 5</mat-label>
+                <input matInput formControlName="difficulte" type="number">
+              </mat-form-field>
+
+              <mat-slide-toggle formControlName="visible" color="primary" class="form-field" i18n>Visible</mat-slide-toggle>
+
+              <div class="button-group">
+                <button mat-mini-fab color="warn" (click)="deleteAttraction(indexForm, formulaireAttraction.get('attraction_id')?.value)">
+                  <mat-icon>delete</mat-icon>
+                </button>
+                <button mat-mini-fab color="accent" (click)="onSubmit(formulaireAttraction)">
+                  <mat-icon>save</mat-icon>
+                </button>
+              </div>
+            </div>
+          </mat-card-content>
+        </mat-card>
       </ng-container>
     </ng-container>
   </mat-card-content>

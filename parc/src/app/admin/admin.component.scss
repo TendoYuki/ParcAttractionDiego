@@ -1,24 +1,49 @@
-.attraction-title {
-  font-size: 18px;
-  font-weight: 500;
-  background-color: darkgrey;
-  width: fit-content;
-  margin-top: 25px;
+.admin-card {
+  padding: 20px;
 }
-.attraction {
+
+.add-button {
   display: flex;
   align-items: center;
-  column-gap: 25px;
-  width: fit-content;
+  gap: 8px;
+  margin-bottom: 15px;
+}
 
-  border-bottom: solid 1px grey;
-  span {
-    padding: 5px;
-    width: 250px;
-  }
-  .champ {
-    padding: 5px;
-    margin-top: 21.5px;
-    width: 250px;
-  }
+.divider {
+  margin: 15px 0;
+}
+
+.attraction-title {
+  margin-bottom: 10px;
+}
+
+.attraction-header {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr 1fr 1fr; 
+  font-weight: bold;
+  padding: 10px;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.attraction-info {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr 1fr auto; 
+  gap: 10px;
+  align-items: center;
+  padding: 10px 0;
+}
+
+.attraction-card {
+  padding: 15px;
+  border-radius: 8px;
+  background-color: white;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.button-group {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
 }

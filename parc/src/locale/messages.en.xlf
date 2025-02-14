@@ -40,7 +40,7 @@
       </trans-unit>
       <trans-unit id="370535076050517688" datatype="html">
         <source>Difficulté : <x id="INTERPOLATION" equiv-text="{{ attraction.difficulte }}"/> / 5</source>
-        <target>Difficulty: <x id="INTERPOLATION" equiv-text="{{ attraction.difficulte }}"/> / 5</target>
+        <target>Difficulty : <x id="INTERPOLATION" equiv-text="{{ attraction.difficulte }}"/> / 5</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/accueil/accueil.component.html</context>
           <context context-type="linenumber">22</context>
@@ -54,12 +54,28 @@
           <context context-type="linenumber">29</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="1229318740686064173" datatype="html">
-        <source> Page administrateur pour <x id="START_TAG_BUTTON" ctype="x-button" equiv-text="&lt;button mat-button (click)=&quot;addAttraction()&quot;&gt;"/>Ajouter<x id="CLOSE_TAG_BUTTON" ctype="x-button" equiv-text="&lt;/button&gt;"/>, modifier et supprimer des attractions </source>
-        <target>Administrator page for <x id="START_TAG_BUTTON" ctype="x-button" equiv-text="&lt;button mat-button (click)=&quot;addAttraction()&quot;&gt;"/>Add<x id="CLOSE_TAG_BUTTON" ctype="x-button" equiv-text="&lt;/button&gt;"/>, edit and delete attractions</target>
+      <trans-unit id="6917833856185484205" datatype="html">
+        <source>Gestion des attractions</source>
+        <target>Attractions management</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/admin/admin.component.html</context>
-          <context context-type="linenumber">4,5</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1819920231618091092" datatype="html">
+        <source>Ajouter, modifier et supprimer des attractions</source>
+        <target>Add, edit, and delete attractions</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/admin/admin.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5603450274251260267" datatype="html">
+        <source><x id="START_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;mat-icon&gt;"/>add<x id="CLOSE_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;/mat-icon&gt;"/> Ajouter une attraction </source>
+        <target><x id="START_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;mat-icon&gt;"/>add<x id="CLOSE_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;/mat-icon&gt;"/> Add an attraction</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/admin/admin.component.html</context>
+          <context context-type="linenumber">9,12</context>
         </context-group>
       </trans-unit>
       <trans-unit id="3416485823535414220" datatype="html">
@@ -67,7 +83,7 @@
         <target>Attraction name</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/admin/admin.component.html</context>
-          <context context-type="linenumber">10,11</context>
+          <context context-type="linenumber">16,17</context>
         </context-group>
       </trans-unit>
       <trans-unit id="7287191990850185862" datatype="html">
@@ -75,7 +91,7 @@
         <target>Attraction description</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/admin/admin.component.html</context>
-          <context context-type="linenumber">11,12</context>
+          <context context-type="linenumber">17,18</context>
         </context-group>
       </trans-unit>
       <trans-unit id="1102715820658871489" datatype="html">
@@ -83,7 +99,7 @@
         <target>Attraction difficulty / 5</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/admin/admin.component.html</context>
-          <context context-type="linenumber">12,13</context>
+          <context context-type="linenumber">18,19</context>
         </context-group>
       </trans-unit>
       <trans-unit id="3712758505200425308" datatype="html">
@@ -91,7 +107,19 @@
         <target>Visible</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/admin/admin.component.html</context>
-          <context context-type="linenumber">13,14</context>
+          <context context-type="linenumber">19,20</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/admin/admin.component.html</context>
+          <context context-type="linenumber">46</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3193976279273491157" datatype="html">
+        <source>Actions</source>
+        <target>Actions</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/admin/admin.component.html</context>
+          <context context-type="linenumber">20,21</context>
         </context-group>
       </trans-unit>
       <trans-unit id="5363451304863092478" datatype="html">
@@ -99,7 +127,7 @@
         <target>Name</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/admin/admin.component.html</context>
-          <context context-type="linenumber">23</context>
+          <context context-type="linenumber">32</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/login/login.component.html</context>
@@ -111,7 +139,7 @@
         <target>Description</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/admin/admin.component.html</context>
-          <context context-type="linenumber">28</context>
+          <context context-type="linenumber">37</context>
         </context-group>
       </trans-unit>
       <trans-unit id="1490236106293192741" datatype="html">
@@ -119,23 +147,7 @@
         <target>Difficulty / 5</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/admin/admin.component.html</context>
-          <context context-type="linenumber">33</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="1725119487503534238" datatype="html">
-        <source>Element visible</source>
-        <target>Visible element</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/admin/admin.component.html</context>
-          <context context-type="linenumber">37</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="4977912145007192180" datatype="html">
-        <source>Enregistrer</source>
-        <target>Save</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/admin/admin.component.html</context>
-          <context context-type="linenumber">39,40</context>
+          <context context-type="linenumber">42</context>
         </context-group>
       </trans-unit>
       <trans-unit id="6187391662882677657" datatype="html">
@@ -196,7 +208,7 @@
       </trans-unit>
       <trans-unit id="6696108412114163418" datatype="html">
         <source>Nom :</source>
-        <target>Name:</target>
+        <target>Name :</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/critiquePopUp/critiquePopUp.component.html</context>
           <context context-type="linenumber">11,12</context>
@@ -204,7 +216,7 @@
       </trans-unit>
       <trans-unit id="252747989080528171" datatype="html">
         <source>Prénom :</source>
-        <target>First name:</target>
+        <target>First name :</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/critiquePopUp/critiquePopUp.component.html</context>
           <context context-type="linenumber">16,17</context>
@@ -212,7 +224,7 @@
       </trans-unit>
       <trans-unit id="4894115585489806944" datatype="html">
         <source>Critique :</source>
-        <target>Review:</target>
+        <target>Review :</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/critiquePopUp/critiquePopUp.component.html</context>
           <context context-type="linenumber">22,23</context>
@@ -220,7 +232,7 @@
       </trans-unit>
       <trans-unit id="3812087815212508628" datatype="html">
         <source>Note :</source>
-        <target>Rating:</target>
+        <target>Rating :</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/critiquePopUp/critiquePopUp.component.html</context>
           <context context-type="linenumber">27,28</context>
@@ -276,7 +288,7 @@
       </trans-unit>
       <trans-unit id="510997745781116699" datatype="html">
         <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Description :<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> <x id="INTERPOLATION" equiv-text="{{ entry.description }}"/></source>
-        <target><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Description:<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> <x id="INTERPOLATION" equiv-text="{{ entry.description }}"/></target>
+        <target><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Description :<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> <x id="INTERPOLATION" equiv-text="{{ entry.description }}"/></target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/critique/critique.component.html</context>
           <context context-type="linenumber">15,16</context>
@@ -284,15 +296,15 @@
       </trans-unit>
       <trans-unit id="3602279571650229274" datatype="html">
         <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Difficulté :<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> <x id="INTERPOLATION" equiv-text="{{ entry.difficulte }}"/> / 5</source>
-        <target><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Difficulty:<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> <x id="INTERPOLATION" equiv-text="{{ entry.difficulte }}"/> / 5</target>
+        <target><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Difficulty :<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> <x id="INTERPOLATION" equiv-text="{{ entry.difficulte }}"/> / 5</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/critique/critique.component.html</context>
           <context context-type="linenumber">16,17</context>
         </context-group>
       </trans-unit>
       <trans-unit id="208079740217667682" datatype="html">
-        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Note moyenne :<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> <x id="INTERPOLATION" equiv-text="{{ averageRating | number:'1.1-1' }}"/> / 5</source>
-        <target><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Average rating:<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> <x id="INTERPOLATION" equiv-text="{{ averageRating | number:'1.1-1' }}"/> / 5</target>
+        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Note moyenne :<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> <x id="INTERPOLATION" equiv-text="{{ averageRating | number:&apos;1.1-1&apos; }}"/> / 5</source>
+        <target><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Average mark :<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> <x id="INTERPOLATION" equiv-text="{{ averageRating | number:&apos;1.1-1&apos; }}"/> / 5</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/critique/critique.component.html</context>
           <context context-type="linenumber">17,18</context>
@@ -324,7 +336,7 @@
       </trans-unit>
       <trans-unit id="4064207694268636878" datatype="html">
         <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Note<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/></source>
-        <target><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Rating<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/></target>
+        <target><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Mark<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/></target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/critique/critique.component.html</context>
           <context context-type="linenumber">28,29</context>
