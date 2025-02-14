@@ -4,7 +4,8 @@
   "i18n": {
     "sourceLocale": "fr",
     "locales": {
-      "en-gb": "src/locale/messages.en.xlf"
+      "en-gb": "src/locale/messages.en.xlf",
+      "es": "src/locale/messages.es.xlf"
     }
   },
   "newProjectRoot": "projects",
@@ -43,7 +44,8 @@
             "scripts": [],
             "localize": [
               "fr",
-              "en-gb"
+              "en-gb",
+              "es"
             ]
           },
           "configurations": {
@@ -52,6 +54,9 @@
             },
             "en": {
               "localize": ["en-gb"]
+            },
+            "es": {
+              "localize": ["es"]
             },
             "production": {
               "budgets": [
@@ -90,6 +95,9 @@
             },
             "en": {
               "buildTarget": "parc:build:en"
+            },
+            "es": {
+              "buildTarget": "parc:build:es"
             }
           },
           "defaultConfiguration": "development"
