@@ -27,7 +27,7 @@ L'application **ParcAttraction** est une solution de gestion des attractions et 
 
 ## 🚀 Installation et Exécution
 
-### **1️⃣ Mise en place du projet **
+### **1️⃣ Mise en place du projet**
 - Faite un clone du projet
 
 ### **2️⃣ Lancement du projet**
