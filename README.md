@@ -59,6 +59,11 @@ L'API est accessible sur : [http://localhost:5000](http://localhost:5000)
 
 
 ### **4️⃣ Accéder au site traduit**
+- Si vous ajoutez du texte à traduire dans vos fichiers voici la commande pour générer le fichier message.xlf
+```bash
+ng extract-i18n --output-path src/locale
+```
+
 - Lancer la traduction (dans le dossier du projet dans un terminal)
 
 **Anglais**
